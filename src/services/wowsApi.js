@@ -13,7 +13,7 @@ const getWowApi = () => {
           movie: scene.movie,
           year: scene.year,
           poster: scene.poster,
-          fullLine: scene.fullLine,
+          fullLine: scene.full_line,
           //ID potencial:
           timeStamp: scene.timestamp,
         };

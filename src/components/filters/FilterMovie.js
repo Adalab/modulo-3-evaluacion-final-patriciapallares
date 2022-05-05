@@ -3,11 +3,10 @@ function FilterMovie(props){
     ev.preventDefault()
     const inputValue = ev.target.value;
     props.handleFilterMovie(inputValue)
-    console.log(inputValue);
   }
 
   return(<>
-  <label>Película</label>
+  <label className='form__label display-block'>Película</label>
   <input 
   type='text'
   // creo que no me va a hacer falta
