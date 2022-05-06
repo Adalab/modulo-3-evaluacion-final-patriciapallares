@@ -1,0 +1,1 @@
+{"version":3,"file":"static/css/main.36dcd21a.css","mappings":"AAAA,UAEE,eAAgB,CAChB,gBAFA,eAEgB","sources":["styles/main.scss"],"sourcesContent":[".card img {\n  min-height: 18vh;\n  max-height: 20vh;\n  max-width: 200px;\n}\n"],"names":[],"sourceRoot":""}
