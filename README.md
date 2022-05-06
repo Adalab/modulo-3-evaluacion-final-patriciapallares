@@ -23,12 +23,19 @@ App de escenas en las que Owen Wilson dice Wow
  - [x] al volver atrás, que se mantenga el valor del input de la user
 
 7. Bonus: mejoras visuales
- - [ ] Bonita, iconos, grid y responsive
+ - [ ] Web bonita, 
+ - [ ] Iconos
+ - [ ] Grid 
+ - [ ] Responsive
 
 8. Bonus: URL compatible y LS
+ - [ ]  Si refrescamos el navegador en el detalle de una escena de la película debe volver a mostrar el
+detalle de la película, solo si está almacenado en el local storage.
 
 9. Bonus: ordenado alfabéticamente
+ - [ ] Escenas en orden alfabético
 
 10. Bonus: reset
+ - [ ] Botón de reset de búsqueda
 
 Notas: si la user escribe todo mayus...
