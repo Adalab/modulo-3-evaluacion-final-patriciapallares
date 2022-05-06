@@ -6,7 +6,7 @@ function SceneDetail(props) {
       <p className='card__description'>"{props.scene.fullLine}"</p>
       <p className='card__description'>{props.scene.year}</p>
       <p className='card__description'>{props.scene.director}</p>
-      <a href={props.scene.audio}>Escuchar audio</a>
+      <a target='_blank' rel='noreferrer' href={props.scene.audio}>Escuchar audio</a>
     </article>
   );
 }

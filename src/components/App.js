@@ -75,6 +75,15 @@ function App() {
     return uniqueYears;
   };
 
+  // código para crear la ruta al timestamp de cada escena
+  const { pathname } =useLocation();
+  const dataPath = matchPath('/scene/:scenetimestamp', pathname);
+
+  const scenetimestamp = dataPath !== null ? dataPath.params.scenetimestamp : null;
+
+  const sceneFound = dataScenes.find((item) => item.timestamp === scenetimestamp)
+
+
   return (
     <>
       <h1 className='title--big'>Escenas wow de Wowen Wilson</h1>
@@ -96,9 +105,9 @@ function App() {
             }
           />
           <Route
-            path='/scene/:scene.timestamp'
+            path='/scene/:scenetimestamp'
             element={
-              <SceneDetail/>
+              <SceneDetail scene={sceneFound}/>
             }
           />
         </Routes>
