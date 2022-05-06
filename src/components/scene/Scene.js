@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import styles from '../../styles/main.scss'
+
 function Scene(props) {
   return (
     <Link to={`/scene/${props.scene.timestamp}`}>

@@ -1,6 +1,6 @@
 function FilterMovie(props){
+
   const handleInput =(ev)=>{
-    ev.preventDefault()
     const inputValue = ev.target.value;
     props.handleFilterMovie(inputValue)
   }

@@ -19,7 +19,7 @@ App de escenas en las que Owen Wilson dice Wow
 
 6. Detalles: <form>, validar si existe la búsqueda de la user o no, toLowerCase(), al volver de la tarjeta-> input con el texto previo, botón volver quizás
  - [ ] Impedir que el navegador navegue
- - [ ] <p> con mensaje No se ha encontrado "zzz"
+ - [ ] /<p>/ con mensaje No se ha encontrado "zzz"
  - [ ] al volver atrás, que se mantenga el valor del input de la user
 
 7. Bonus: mejoras visuales

@@ -83,6 +83,11 @@ function App() {
 
   const sceneFound = dataScenes.find((item) => item.timestamp === scenetimestamp)
 
+  // const warning = () => {
+  //   if (sceneFilters === 0) {
+  //     return <p> `No hay ninguna nombre de película que coincida con la palabra tal` </p>
+  //   } else 
+  // }
 
   return (
     <>
