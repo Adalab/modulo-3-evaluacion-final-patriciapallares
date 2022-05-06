@@ -27,6 +27,7 @@ App de escenas en las que Owen Wilson dice Wow
  - [ ] Iconos
  - [ ] Grid 
  - [ ] Responsive
+ - [ ] Botón de volver atrás
 
 8. Bonus: URL compatible y LS
  - [ ]  Si refrescamos el navegador en el detalle de una escena de la película debe volver a mostrar el

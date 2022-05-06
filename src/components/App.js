@@ -53,7 +53,7 @@ function App() {
     if (filterMovie === '') {
         return true;
       } else {
-        return scene.movie.toLowerCase().includes(filterMovie.toLowerCase());
+        return (scene.movie.toLowerCase().includes(filterMovie.toString().toLowerCase()));
       }
     })
     //filter para select año (solución ev intermedia)
