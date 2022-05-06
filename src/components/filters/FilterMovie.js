@@ -1,7 +1,7 @@
 function FilterMovie(props){
 
   const handleInput =(ev)=>{
-    const inputValue = ev.target.value;
+    const inputValue =  ev.target.value;
     props.handleFilterMovie(inputValue)
   }
 

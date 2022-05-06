@@ -8,6 +8,12 @@ import SceneList from './scene/SceneList';
 import SceneDetail from './scene/SceneDetail';
 import SceneNotFound from './scene/SceneNotFound';
 
+import LS from '../services/localStorage'
+
+// LS: 1º verificamos si hay datos en LS y si sí: get al input; si no: set, no?
+
+
+
 function App() {
   const [dataScenes, setDataScenes] = useState([]);
 
@@ -50,7 +56,7 @@ function App() {
       if (filterMovie === '') {
         return true;
       } else {
-        return scene.movie.toLowerCase().includes(filterMovie);
+        return scene.movie.toLowerCase().includes(filterMovie.toLowerCase());
       }
     })
     //filter para select año (solución ev intermedia)
@@ -77,12 +83,15 @@ function App() {
   };
 
   // código para crear la ruta al timestamp de cada escena
-  const { pathname } =useLocation();
+  const { pathname } = useLocation();
   const dataPath = matchPath('/scene/:scenetimestamp', pathname);
 
-  const scenetimestamp = dataPath !== null ? dataPath.params.scenetimestamp : null;
+  const scenetimestamp =
+    dataPath !== null ? dataPath.params.scenetimestamp : null;
 
-  const sceneFound = dataScenes.find((item) => item.timestamp === scenetimestamp)
+  const sceneFound = dataScenes.find(
+    (item) => item.timestamp === scenetimestamp
+  );
 
   return (
     <>
@@ -100,14 +109,17 @@ function App() {
                   filterYear={filterYear}
                   years={getYears()}
                 />
-                <SceneNotFound filterMovie={filterMovie} sceneFilters={sceneFilters}/>
+                <SceneNotFound
+                  filterMovie={filterMovie}
+                  sceneFilters={sceneFilters}
+                />
                 <SceneList scenes={sceneFilters} />
               </>
             }
           />
           <Route
             path='/scene/:scenetimestamp'
-            element={<SceneDetail scene={sceneFound}/>}
+            element={<SceneDetail scene={sceneFound} />}
           />
         </Routes>
       </div>
