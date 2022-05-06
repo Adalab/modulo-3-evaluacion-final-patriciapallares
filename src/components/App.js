@@ -1,7 +1,11 @@
 import { useEffect, useState } from 'react';
+import { Routes, Route } from 'react-router-dom';
+import { matchPath, useLocation } from 'react-router';
+
 import getWowApi from '../services/wowsApi';
 import Filters from './filters/Filters';
 import SceneList from './scene/SceneList';
+import SceneDetail from './scene/SceneDetail';
 
 function App() {
   const [dataScenes, setDataScenes] = useState([]);
@@ -40,7 +44,6 @@ function App() {
 
  */
 
-
   const sceneFilters = dataScenes
     .filter((scene) => {
       if (filterMovie === '') {
@@ -51,7 +54,7 @@ function App() {
     })
     //filter para select año (solución ev intermedia)
     .filter((scene) => {
-      if (filterYear === 0 ) {
+      if (filterYear === 0) {
         return true;
       } else if (filterYear === scene.year) {
         return true;
@@ -60,6 +63,7 @@ function App() {
         return false;
       }
     });
+
   // filter para input película
 
   // función para obtener los años una única vez
@@ -75,15 +79,29 @@ function App() {
     <>
       <h1 className='title--big'>Escenas wow de Wowen Wilson</h1>
       <div>
-        <Filters
-          handleFilterMovie={handleFilterMovie}
-          filterMovie={filterMovie}
-          handleFilterYear={handleFilterYear}
-          filterYear={filterYear}
-          years={getYears()}
-        />
-
-        <SceneList scenes={sceneFilters} />
+        <Routes>
+          <Route
+            path='/'
+            element={
+              <>
+                <Filters
+                  handleFilterMovie={handleFilterMovie}
+                  filterMovie={filterMovie}
+                  handleFilterYear={handleFilterYear}
+                  filterYear={filterYear}
+                  years={getYears()}
+                />
+                <SceneList scenes={sceneFilters} />
+              </>
+            }
+          />
+          <Route
+            path='/scene/:scene.timestamp'
+            element={
+              <SceneDetail/>
+            }
+          />
+        </Routes>
       </div>
     </>
   );

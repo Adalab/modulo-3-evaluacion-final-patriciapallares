@@ -15,7 +15,10 @@ const getWowApi = () => {
           poster: scene.poster,
           fullLine: scene.full_line,
           //ID potencial:
-          timeStamp: scene.timestamp,
+          timestamp: scene.timestamp,
+          //Para el detalle
+          audio: scene.audio,
+          director: scene.director,
         };
       });
       return dataClean;

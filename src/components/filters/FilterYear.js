@@ -6,8 +6,8 @@ function FilterYear(props) {
   
   // creo que me tocará cambiar el value para controlar el estado...
   const renderYears = () => {
-    return props.years.map((year, index) => {
-      return <option key={index} value={props.FilterYear}>{year}</option>;
+    return props.years.sort().map((year, index) => {
+      return <option key={index} value={year}>{year}</option>;
     });
   };
 
@@ -15,7 +15,7 @@ function FilterYear(props) {
   return (
     <>
       <label className= 'form__label display-block' htmlFor=''>Año</label>
-      <select  onChange={handleSelect}>
+      <select value={props.FilterYear} onChange={handleSelect}>
         <option value='0'>Selecciona</option>
         {renderYears()}
       </select>
