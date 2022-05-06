@@ -10,9 +10,6 @@ import SceneNotFound from './scene/SceneNotFound';
 
 import LS from '../services/localStorage'
 
-// LS: 1º verificamos si hay datos en LS y si sí: get al input; si no: set, no?
-
-
 
 function App() {
   const [dataScenes, setDataScenes] = useState([]);
@@ -22,9 +19,9 @@ function App() {
   const [filterYear, setFilterYear] = useState(0);
 
   useEffect(() => {
-    getWowApi().then((dataFromApi) => {
-      setDataScenes(dataFromApi);
-    });
+      getWowApi().then((dataFromApi) => {
+        setDataScenes(dataFromApi);
+      });
   }, []);
 
   const handleFilterMovie = (value) => {
@@ -35,25 +32,10 @@ function App() {
     setFilterYear(value);
   };
 
-  /*
-
-  const handleFilterYear = (value) => {
-    if (filterYear.includes(value)) {
-      const newYears = filterYear.filter((year) => year !== value);
-      setFilterYear(newYears);
-      console.log('cumple el if');
-
-    } else {
-      setFilterYear([value]);
-      console.log('cumple el else');
-    }
-  };
-
- */
-
   const sceneFilters = dataScenes
-    .filter((scene) => {
-      if (filterMovie === '') {
+  // filter para input película
+  .filter((scene) => {
+    if (filterMovie === '') {
         return true;
       } else {
         return scene.movie.toLowerCase().includes(filterMovie.toLowerCase());
@@ -70,8 +52,6 @@ function App() {
         return false;
       }
     });
-
-  // filter para input película
 
   // función para obtener los años una única vez
   const getYears = () => {
