@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 function SceneDetail(props) {
   return (
     <article>
@@ -7,6 +9,7 @@ function SceneDetail(props) {
       <p className='card__description'>{props.scene.year}</p>
       <p className='card__description'>{props.scene.director}</p>
       <a target='_blank' rel='noreferrer' href={props.scene.audio}>Escuchar audio</a>
+      <Link to='/'><button>Volver</button></Link>
     </article>
   );
 }
