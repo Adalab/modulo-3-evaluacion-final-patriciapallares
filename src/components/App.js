@@ -6,6 +6,7 @@ import getWowApi from '../services/wowsApi';
 import Filters from './filters/Filters';
 import SceneList from './scene/SceneList';
 import SceneDetail from './scene/SceneDetail';
+import SceneNotFound from './scene/SceneNotFound';
 
 function App() {
   const [dataScenes, setDataScenes] = useState([]);
@@ -83,12 +84,6 @@ function App() {
 
   const sceneFound = dataScenes.find((item) => item.timestamp === scenetimestamp)
 
-  // const warning = () => {
-  //   if (sceneFilters === 0) {
-  //     return <p> `No hay ninguna nombre de película que coincida con la palabra tal` </p>
-  //   } else 
-  // }
-
   return (
     <>
       <h1 className='title--big'>Escenas wow de Wowen Wilson</h1>
@@ -105,15 +100,14 @@ function App() {
                   filterYear={filterYear}
                   years={getYears()}
                 />
+                <SceneNotFound filterMovie={filterMovie} sceneFilters={sceneFilters}/>
                 <SceneList scenes={sceneFilters} />
               </>
             }
           />
           <Route
             path='/scene/:scenetimestamp'
-            element={
-              <SceneDetail scene={sceneFound}/>
-            }
+            element={<SceneDetail scene={sceneFound}/>}
           />
         </Routes>
       </div>
