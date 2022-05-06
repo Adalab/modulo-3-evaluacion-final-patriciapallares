@@ -10,19 +10,32 @@ import SceneNotFound from './scene/SceneNotFound';
 
 import LS from '../services/localStorage'
 
+// set input value en LS
+
+
 
 function App() {
+
   const [dataScenes, setDataScenes] = useState([]);
 
-  const [filterMovie, setFilterMovie] = useState('');
+  const [filterMovie, setFilterMovie] = useState(LS.get('filterMovie', []))
 
   const [filterYear, setFilterYear] = useState(0);
 
   useEffect(() => {
+    if (dataScenes.length === 0){
       getWowApi().then((dataFromApi) => {
         setDataScenes(dataFromApi);
       });
+
+    }
   }, []);
+
+  //Debemos guardar los datos en el local storage en un useEffect para que después de cambiar el local storage esté actualizado.
+  //Lee del local storage los datos y guárdalos en el useState para que estén disponibles al arrancar la página.
+  useEffect(()=> {
+    LS.set('filterMovie', filterMovie);
+  }, [filterMovie])
 
   const handleFilterMovie = (value) => {
     setFilterMovie(value);
