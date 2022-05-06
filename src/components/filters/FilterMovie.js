@@ -9,9 +9,7 @@ function FilterMovie(props){
   <label className='form__label display-block'>Película</label>
   <input 
   type='text'
-  // creo que no me va a hacer falta
-  // id={props.id}
-  value={props.FilterMovie}
+  value={`${props.filterMovie}`}
   onChange={handleInput}
   />
   </>)

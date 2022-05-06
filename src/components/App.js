@@ -45,6 +45,8 @@ function App() {
     setFilterYear(value);
   };
 
+  console.log(filterMovie);
+
   const sceneFilters = dataScenes
   // filter para input película
   .filter((scene) => {
