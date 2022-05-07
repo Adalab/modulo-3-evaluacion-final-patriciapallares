@@ -8,31 +8,28 @@ import SceneList from './scene/SceneList';
 import SceneDetail from './scene/SceneDetail';
 import SceneNotFound from './scene/SceneNotFound';
 
-import LS from '../services/localStorage'
-
+import LS from '../services/localStorage';
 
 function App() {
-
   const [dataScenes, setDataScenes] = useState([]);
 
-  const [filterMovie, setFilterMovie] = useState(LS.get('filterMovie', []))
+  const [filterMovie, setFilterMovie] = useState(LS.get('filterMovie', []));
 
   const [filterYear, setFilterYear] = useState(0);
 
   useEffect(() => {
-    if (dataScenes.length === 0){
+    if (dataScenes.length === 0) {
       getWowApi().then((dataFromApi) => {
         setDataScenes(dataFromApi);
       });
-
     }
   }, []);
 
   //Debemos guardar los datos en el local storage en un useEffect para que después de cambiar el local storage esté actualizado.
   //Lee del local storage los datos y guárdalos en el useState para que estén disponibles al arrancar la página.
-  useEffect(()=> {
+  useEffect(() => {
     LS.set('filterMovie', filterMovie);
-  }, [filterMovie])
+  }, [filterMovie]);
 
   const handleFilterMovie = (value) => {
     setFilterMovie(value);
@@ -42,14 +39,15 @@ function App() {
     setFilterYear(value);
   };
 
-
   const sceneFilters = dataScenes
-  // filter para input película
-  .filter((scene) => {
-    if (filterMovie === '') {
+    // filter para input película
+    .filter((scene) => {
+      if (filterMovie === '') {
         return true;
       } else {
-        return (scene.movie.toLowerCase().includes(filterMovie.toString().toLowerCase()));
+        return scene.movie
+          .toLowerCase()
+          .includes(filterMovie.toString().toLowerCase());
       }
     })
     //filter para select año (solución ev intermedia)
@@ -64,6 +62,21 @@ function App() {
       }
     });
 
+  // orden alfabético:
+
+  const compareByName = (sceneA, sceneB) => {
+    if (sceneA.movie > sceneB.movie) {
+      return 1;
+    }
+    if (sceneA.movie < sceneB.movie) {
+      return -1;
+    }
+    return 0
+  };
+
+  const sortedScenes = sceneFilters.sort(compareByName)
+
+  
   // función para obtener los años una única vez
   const getYears = () => {
     const sceneYears = dataScenes.map((scene) => scene.year);
@@ -102,9 +115,9 @@ function App() {
                 />
                 <SceneNotFound
                   filterMovie={filterMovie}
-                  sceneFilters={sceneFilters}
+                  sortedScenes={sortedScenes}
                 />
-                <SceneList scenes={sceneFilters} />
+                <SceneList sortedScenes={sortedScenes} />
               </>
             }
           />

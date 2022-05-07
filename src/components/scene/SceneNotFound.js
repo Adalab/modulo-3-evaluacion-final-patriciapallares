@@ -1,5 +1,5 @@
 function SceneNotFound(props) {
-  if (props.sceneFilters.length === 0) {
+  if (props.sortedScenes.length === 0) {
     return (
       <div>
         <p>
