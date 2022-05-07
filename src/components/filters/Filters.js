@@ -2,6 +2,9 @@ import FilterMovie from './FilterMovie';
 import FilterReset from './FilterReset';
 import FilterYear from './FilterYear';
 
+import styles from '../../styles/form.scss'
+
+
 function Filters(props) {
   // función para controlar el formulario y su submit AY
 

@@ -1,5 +1,6 @@
 import Scene from './Scene';
-import styles from '../../styles/main.scss'
+import styles from '../../styles/scene.scss'
+
 
 function SceneList(props) {
   if (props.dataScenes.length === 0) {

@@ -1,0 +1,120 @@
+body {
+  background-color: #44d186;
+}
+
+.detail {
+  &__card {
+    border-radius: 5px;
+    background-color: #85ffbd;
+    background-image: linear-gradient(45deg, #85ffbd 0%, #fffb7d 100%);
+
+    padding: 10px;
+    margin: 0 15px;
+    width: 150px;
+    max-height: 375px;
+
+    &__img {
+      width: 200px;
+      border-radius: 10px;
+    }
+
+    &__title {
+      margin: 5px;
+      font-size: xx-large;
+      width: 250px;
+      text-align: center;
+      letter-spacing: 1.5px;
+      color: #44d186;
+      font-weight: 600;
+    }
+
+    &__text {
+      display: flex;
+      align-items: center;
+      font-size: large;
+      font-style: italic;
+      text-align: center;
+      padding: 5px;
+      height: 80px;
+      letter-spacing: 1.25px;
+      color: black;
+    }
+
+    &__link {
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      font-size: medium;
+      text-align: center;
+      margin-top: 20px;
+      letter-spacing: 1.25px;
+      color: black;
+      border-bottom: #44d186 solid 1px;
+    }
+
+    &__year {
+      padding: 10px;
+      font-size: medium;
+      color: black;
+      letter-spacing: 1.5px;
+      width: 250px;
+
+      &__bold {
+        font-weight: 600;
+        color: black;
+      }
+    }
+    &__button {
+      width: 70px;
+      height: 30px;
+      color: #f9f7ac;
+      background-color:  #44d186;
+
+      border: none;
+      border-radius: 5px;
+      letter-spacing: 1.5px;
+      font-weight: 600;
+      letter-spacing: 1.5px;
+
+      transform: translate(110px, 10px);
+    }
+  }
+  &__section {
+    display: flex;
+    justify-content: center;
+    height: 400px;
+  }
+
+  &__article {
+    display: flex;
+    justify-content: space-between;
+    width: 600px;
+    background-image: linear-gradient(45deg, #85ffbd 0%, #fffb7d 100%);
+    border-radius: 10px;
+  }
+  &__divIMG {
+    display: flex;
+    width: 200px;
+    margin: 20px;
+    border: #f9f7ac solid 2px;
+    border-radius: 10px;
+    height: 350px;
+  }
+  &__divINFO {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    background-color: #f9f6ac92;
+    margin: 20px;
+    width: 300px;
+    padding: 10px;
+    border: #44d186 dashed 2px;
+  }
+}
+
+
+.detail__card__button:hover{
+  cursor: pointer;
+}

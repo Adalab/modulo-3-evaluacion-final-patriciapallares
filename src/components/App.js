@@ -9,6 +9,9 @@ import SceneDetail from './scene/SceneDetail';
 
 import LS from '../services/localStorage';
 
+import styles from '../styles/page.scss'
+
+
 function App() {
   const [dataScenes, setDataScenes] = useState([]);
 

@@ -15,7 +15,7 @@ function FilterYear(props) {
   return (
     <div className='form__div'>
       <label className= 'form__text' htmlFor=''>Año</label>
-      <select value={props.FilterYear} onChange={handleSelect}>
+      <select className='form__input' value={props.FilterYear} onChange={handleSelect}>
         <option value='0'>Selecciona</option> 
         {renderYears()}
       </select>

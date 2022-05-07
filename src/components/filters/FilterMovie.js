@@ -8,6 +8,7 @@ function FilterMovie(props) {
     <div className='form__div'>
       <label className='form__text'>Película</label>
       <input
+        className=''
         type='text'
         value={`${props.filterMovie}`}
         onChange={handleInput}
