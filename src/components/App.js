@@ -6,7 +6,6 @@ import getWowApi from '../services/wowsApi';
 import Filters from './filters/Filters';
 import SceneList from './scene/SceneList';
 import SceneDetail from './scene/SceneDetail';
-import SceneNotFound from './scene/SceneNotFound';
 
 import LS from '../services/localStorage';
 
@@ -39,15 +38,15 @@ function App() {
     setFilterYear(value);
   };
 
-    // reset button function
-/**
- * Establece las variables de estado filterMovie y filterYear en cadenas vacías y 0 respectivamente
- */
+  // reset button function
+  /**
+   * Establece las variables de estado filterMovie y filterYear en cadenas vacías y 0 respectivamente
+   */
 
   const handleFilterReset = () => {
-    setFilterMovie('')
-    setFilterYear(0)
-  }
+    setFilterMovie('');
+    setFilterYear(0);
+  };
 
   console.log(filterYear);
 
@@ -83,12 +82,11 @@ function App() {
     if (sceneA.movie < sceneB.movie) {
       return -1;
     }
-    return 0
+    return 0;
   };
 
-  const sortedScenes = sceneFilters.sort(compareByName)
+  const sortedScenes = sceneFilters.sort(compareByName);
 
-  
   // función para obtener los años una única vez
   const getYears = () => {
     const sceneYears = dataScenes.map((scene) => scene.year);
@@ -109,8 +107,6 @@ function App() {
     (item) => item.timestamp === scenetimestamp
   );
 
-
-
   return (
     <>
       <h1 className='title--big'>Escenas wow de Wowen Wilson</h1>
@@ -128,11 +124,11 @@ function App() {
                   years={getYears()}
                   handleFilterReset={handleFilterReset}
                 />
-                <SceneNotFound
+                <SceneList
                   filterMovie={filterMovie}
                   sortedScenes={sortedScenes}
+                  dataScenes={dataScenes}
                 />
-                <SceneList sortedScenes={sortedScenes} />
               </>
             }
           />
