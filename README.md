@@ -19,7 +19,7 @@ App de escenas en las que Owen Wilson dice Wow
 
 6. Detalles: <form>, validar si existe la búsqueda de la user o no, toLowerCase(), al volver de la tarjeta-> input con el texto previo, botón volver quizás
  - [x] Impedir que el navegador navegue
- - [x] /<p>/ con mensaje No se ha encontrado "zzz"
+ - [x] parrafo con mensaje No se ha encontrado "zzz"
  - [x] al volver atrás, que se mantenga el valor del input de la user
 
 7. Bonus: mejoras visuales
@@ -27,11 +27,10 @@ App de escenas en las que Owen Wilson dice Wow
  - [ ] Iconos
  - [ ] Grid 
  - [ ] Responsive
- - [ ] Botón de volver atrás
+ - [x] Botón de volver atrás
 
 8. Bonus: URL compatible y LS
- - [ ]  Si refrescamos el navegador en el detalle de una escena de la película debe volver a mostrar el
-detalle de la película, solo si está almacenado en el local storage.
+ - [ ]  Si refrescamos el navegador en el detalle de una escena de la película debe volver a mostrar el detalle de la película, solo si está almacenado en el local storage.
 
 9. Bonus: ordenado alfabéticamente
  - [ ] Escenas en orden alfabético

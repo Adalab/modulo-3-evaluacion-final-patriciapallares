@@ -10,9 +10,6 @@ import SceneNotFound from './scene/SceneNotFound';
 
 import LS from '../services/localStorage'
 
-// set input value en LS
-
-
 
 function App() {
 
@@ -45,7 +42,6 @@ function App() {
     setFilterYear(value);
   };
 
-  console.log(filterMovie);
 
   const sceneFilters = dataScenes
   // filter para input película

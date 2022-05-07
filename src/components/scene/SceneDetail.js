@@ -1,6 +1,17 @@
 import { Link } from 'react-router-dom';
+import LS from '../../services/localStorage'
+import { useEffect } from 'react';
+
 
 function SceneDetail(props) {
+  useEffect(()=>{
+    LS.set(props.scene.timestamp, props.scene)
+    LS.get(props.scene.timestamp, []);
+
+    console.log('he ocurrido');
+  })
+  
+
   return (
     <article>
       <img className='' alt={props.scene.movie} src={props.scene.poster} />
