@@ -23,7 +23,7 @@ App de escenas en las que Owen Wilson dice Wow
  - [x] al volver atrás, que se mantenga el valor del input de la user
 
 7. Bonus: mejoras visuales
- - [ ] Web bonita, 
+ - [ ] Web bonita
  - [ ] Iconos
  - [ ] Grid 
  - [ ] Responsive
@@ -38,7 +38,7 @@ App de escenas en las que Owen Wilson dice Wow
 10. Bonus: reset
  - [ ] Botón de reset de búsqueda
 
-11. Bonus: login
- - [ ] Login al cargar la página
+11. Bonus: loading
+ - [x] Loading al cargar la página
 
  Notas: añadir placeholder

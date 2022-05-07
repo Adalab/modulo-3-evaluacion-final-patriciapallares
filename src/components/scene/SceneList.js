@@ -8,8 +8,7 @@ function SceneList(props) {
   if (props.sortedScenes.length === 0) {
     return (
       <p>
-        No hay ningún nombre de película que coincida con la palabra:
-        {props.filterMovie}
+        No hay ningún nombre de película que coincida con la palabra: {props.filterMovie}
       </p>
     );
   }
