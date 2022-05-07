@@ -5,9 +5,9 @@ function FilterReset(props) {
 
   }
   // queremos que borre el LS, el valor del input, del select del año y de la búsqueda.
-  return (<>
-    <button onClick={handleClick}>Borrar</button>
-  </>)
+  return (<div className='form__div'>
+    <button className='form__button' onClick={handleClick}>Borrar</button>
+  </div>)
 }
 
 export default FilterReset;

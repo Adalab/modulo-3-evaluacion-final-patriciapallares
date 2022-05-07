@@ -10,8 +10,8 @@ function Filters(props) {
   }
 
   return (
-    <section className='col2'>
-      <form action='' onSubmit={handleForm}>
+    <section className='form__section'>
+      <form className='form__form' action='' onSubmit={handleForm}>
         <FilterMovie handleFilterMovie={props.handleFilterMovie}
         filterMovie={props.filterMovie}
         />
@@ -22,7 +22,6 @@ function Filters(props) {
         />
 
         <FilterReset handleFilterReset={props.handleFilterReset}/>
-
 
       </form>
     </section>

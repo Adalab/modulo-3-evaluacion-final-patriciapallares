@@ -1,11 +1,13 @@
 .scene__card {
   display: flex;
   border-radius: 5px;
-  background: rgb(255,163,73);
-  background: linear-gradient(0deg, rgba(255,163,73,1) 0%, rgba(255,163,73,0.227328431372549) 100%);
+  background-color: #85ffbd;
+  background-image: linear-gradient(45deg, #85ffbd 0%, #fffb7d 100%);
+
   padding: 10px;
-  margin: 10px;
+  margin: 0 15px;
   width: 150px;
+  max-height: 375px;
 
   &__link {
     text-decoration: none;
@@ -28,7 +30,7 @@
     text-align: center;
     color: black;
     letter-spacing: 1.5px;
-
+    border-radius: 5px;
   }
 
   &__text {
@@ -38,10 +40,9 @@
     font-style: italic;
     text-align: center;
     padding: 5px;
-    height: 85px;
+    height: 80px;
     letter-spacing: 1.25px;
     color: black;
-
   }
 
   &__year {
@@ -50,7 +51,7 @@
     font-size: medium;
     font-weight: 600;
     color: black;
-letter-spacing: 1.5px;
+    letter-spacing: 1.5px;
   }
 }
 
@@ -59,7 +60,9 @@ letter-spacing: 1.5px;
   grid-template-columns: repeat(5, 1fr);
   grid-template-rows: repeat(10, 1fr);
   grid-column-gap: 10px;
-  grid-row-gap: 10px;
+  grid-row-gap: 5px;
+  
+  align-items: center;
 }
 
 .scene__section {
@@ -69,4 +72,62 @@ letter-spacing: 1.5px;
   margin-bottom: 20px;
   margin-left: 10%;
   margin-right: 10%;
+}
+
+.page__header {
+  margin: 5%;
+
+  text-align: center;
+  color: #44d186;
+  background-color: #fffb7db4;
+  border-radius: 5px;
+  padding: 5px;
+  letter-spacing: 2px;
+}
+
+.form {
+  &__section {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 10%;
+    margin-right: 10%;
+  }
+
+  &__form {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1fr;
+    grid-column-gap: 20px;
+    grid-row-gap: 0px;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  &__text {
+    color: #f9f7ac;
+    background-color: #44d186;
+    border-radius: 5px;
+    padding-left: 5px;
+    text-align: center;
+    padding: 5px;
+    margin: 5px;
+    letter-spacing: 1.5px;
+  }
+  &__button {
+    width: 80px;
+    height: 50px;
+    color: #f9f7ac;
+    background-color: #44d186;
+    border-radius: 5px;
+    border: none;
+    letter-spacing: 1.5px;
+  }
 }

@@ -1,17 +1,19 @@
-function FilterMovie(props){
+function FilterMovie(props) {
+  const handleInput = (ev) => {
+    const inputValue = ev.target.value;
+    props.handleFilterMovie(inputValue);
+  };
 
-  const handleInput =(ev)=>{
-    const inputValue =  ev.target.value;
-    props.handleFilterMovie(inputValue)
-  }
-
-  return(<>
-  <label className='form__label display-block'>Película</label>
-  <input 
-  type='text'
-  value={`${props.filterMovie}`}
-  onChange={handleInput}
-  />
-  </>)
+  return (
+    <div className='form__div'>
+      <label className='form__text'>Película</label>
+      <input
+        type='text'
+        value={`${props.filterMovie}`}
+        onChange={handleInput}
+        placeholder="Shanghai Knights"
+      />
+    </div>
+  );
 }
 export default FilterMovie;
