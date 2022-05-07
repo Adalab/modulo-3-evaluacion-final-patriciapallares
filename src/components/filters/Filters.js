@@ -1,8 +1,10 @@
 import FilterMovie from './FilterMovie';
+import FilterReset from './FilterReset';
 import FilterYear from './FilterYear';
 
 function Filters(props) {
   // función para controlar el formulario y su submit AY
+
   const handleForm =(ev)=>{
     ev.preventDefault()
   }
@@ -18,6 +20,8 @@ function Filters(props) {
         handleFilterYear={props.handleFilterYear}
         filterYear={props.filterYear}
         />
+
+        <FilterReset handleFilterReset={props.handleFilterReset}/>
 
 
       </form>

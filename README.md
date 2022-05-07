@@ -33,9 +33,12 @@ App de escenas en las que Owen Wilson dice Wow
  - [ ]  Si refrescamos el navegador en el detalle de una escena de la película debe volver a mostrar el detalle de la película, solo si está almacenado en el local storage.
 
 9. Bonus: ordenado alfabéticamente
- - [ ] Escenas en orden alfabético
+ - [x] Escenas en orden alfabético
 
 10. Bonus: reset
  - [ ] Botón de reset de búsqueda
 
-Notas: si la user escribe todo mayus...
+11. Bonus: login
+ - [ ] Login al cargar la página
+
+ Notas: añadir placeholder

@@ -39,6 +39,18 @@ function App() {
     setFilterYear(value);
   };
 
+    // reset button function
+/**
+ * Establece las variables de estado filterMovie y filterYear en cadenas vacías y 0 respectivamente
+ */
+
+  const handleFilterReset = () => {
+    setFilterMovie('')
+    setFilterYear(0)
+  }
+
+  console.log(filterYear);
+
   const sceneFilters = dataScenes
     // filter para input película
     .filter((scene) => {
@@ -47,7 +59,7 @@ function App() {
       } else {
         return scene.movie
           .toLowerCase()
-          .includes(filterMovie.toString().toLowerCase());
+          .includes(filterMovie.toString().toLowerCase().trim());
       }
     })
     //filter para select año (solución ev intermedia)
@@ -97,6 +109,8 @@ function App() {
     (item) => item.timestamp === scenetimestamp
   );
 
+
+
   return (
     <>
       <h1 className='title--big'>Escenas wow de Wowen Wilson</h1>
@@ -112,6 +126,7 @@ function App() {
                   handleFilterYear={handleFilterYear}
                   filterYear={filterYear}
                   years={getYears()}
+                  handleFilterReset={handleFilterReset}
                 />
                 <SceneNotFound
                   filterMovie={filterMovie}
