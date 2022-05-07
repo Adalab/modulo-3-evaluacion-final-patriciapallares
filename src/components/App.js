@@ -109,7 +109,7 @@ function App() {
 
   return (
     <>
-      <h1 className='page__header'>Wowen  Wilson  WOW  scenes</h1>
+      <h1 className='page__header'>Wowen  Wilson's  WOW  scenes</h1>
       <div>
         <Routes>
           <Route

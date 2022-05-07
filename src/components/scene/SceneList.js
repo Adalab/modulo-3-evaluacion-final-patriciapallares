@@ -3,13 +3,13 @@ import styles from '../../styles/main.scss'
 
 function SceneList(props) {
   if (props.dataScenes.length === 0) {
-    return <p>Cargando datos</p>;
+    return <p className='scene__warning'>Cargando datos</p>;
   }
 
   if (props.sortedScenes.length === 0) {
     return (
-      <p>
-        No hay ningún nombre de película que coincida con la palabra: {props.filterMovie}
+      <p className='scene__warning'>
+        No hay ningún nombre de película que coincida con la palabra: <span className='scene__warning__italics'>{props.filterMovie}</span>
       </p>
     );
   }
