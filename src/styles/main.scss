@@ -1,5 +1,72 @@
-.card img {
-  min-height: 18vh;
-  max-height: 20vh;
-  max-width: 200px;
+.scene__card {
+  display: flex;
+  border-radius: 5px;
+  background: rgb(255,163,73);
+  background: linear-gradient(0deg, rgba(255,163,73,1) 0%, rgba(255,163,73,0.227328431372549) 100%);
+  padding: 10px;
+  margin: 10px;
+  width: 150px;
+
+  &__link {
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 150px;
+  }
+
+  &__img {
+    max-width: 120px;
+    border-radius: 5px;
+  }
+
+  &__title {
+    padding: 5px;
+    font-size: large;
+    width: 170px;
+    text-align: center;
+    color: black;
+    letter-spacing: 1.5px;
+
+  }
+
+  &__text {
+    display: flex;
+    align-items: center;
+    font-size: small;
+    font-style: italic;
+    text-align: center;
+    padding: 5px;
+    height: 85px;
+    letter-spacing: 1.25px;
+    color: black;
+
+  }
+
+  &__year {
+    padding: 5px;
+
+    font-size: medium;
+    font-weight: 600;
+    color: black;
+letter-spacing: 1.5px;
+  }
+}
+
+.scene__cards {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(10, 1fr);
+  grid-column-gap: 10px;
+  grid-row-gap: 10px;
+}
+
+.scene__section {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-left: 10%;
+  margin-right: 10%;
 }

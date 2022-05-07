@@ -1,4 +1,5 @@
 import Scene from './Scene';
+import styles from '../../styles/main.scss'
 
 function SceneList(props) {
   if (props.dataScenes.length === 0) {
@@ -15,7 +16,7 @@ function SceneList(props) {
 
   const sceneElements = props.sortedScenes.map((scene, index) => {
     return (
-      <li className='card' key={index}>
+      <li className='scene__card' key={index}>
         <Scene scene={scene} />
       </li>
     );
@@ -23,8 +24,8 @@ function SceneList(props) {
 
   return (
     <>
-      <section>
-        <ul className='cards'> {sceneElements}</ul>
+      <section className='scene__section'>
+        <ul className='scene__cards'> {sceneElements}</ul>
       </section>
     </>
   );
