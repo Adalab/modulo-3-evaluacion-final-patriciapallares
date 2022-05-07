@@ -23,9 +23,9 @@ App de escenas en las que Owen Wilson dice Wow
  - [x] al volver atrás, que se mantenga el valor del input de la user
 
 7. Bonus: mejoras visuales
- - [ ] Web bonita
+ - [x] Web bonita
  - [ ] Iconos
- - [ ] Grid 
+ - [x] Grid 
  - [ ] Responsive
  - [x] Botón de volver atrás
 
