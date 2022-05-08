@@ -57,7 +57,7 @@
 
     padding: 10px;
     width: 150px;
-    max-height: 375px;
+    height: 390px;
 
     @media all and (min-width: 768px) {
       // margin: 0 15px;
@@ -74,13 +74,14 @@
 
     &__img {
       max-width: 120px;
-      border-radius: 5px;
+      border-radius: 5px ;
+      margin-bottom: 20px;
     }
 
     &__title {
       padding: 5px;
       font-size: large;
-      width: 170px;
+      width: 160px;
       text-align: center;
       color: black;
       letter-spacing: 1.5px;
@@ -94,7 +95,7 @@
       font-style: italic;
       text-align: center;
       padding: 5px;
-      height: 80px;
+      height: 100px;
       letter-spacing: 1.25px;
       color: black;
     }

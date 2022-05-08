@@ -45,7 +45,7 @@ body {
       align-items: center;
       font-size: medium;
       text-align: center;
-      margin-top: 20px;
+      margin: 10px;
       letter-spacing: 1.25px;
       color: black;
       border-bottom: #44d186 solid 1px;
@@ -75,7 +75,7 @@ body {
       font-weight: 600;
       letter-spacing: 1.5px;
 
-      transform: translate(110px, 10px);
+      transform: translate(110px, 0px);
     }
   }
   &__section {
@@ -98,6 +98,7 @@ body {
       display: flex;
       justify-content: space-between;
       flex-direction: row;
+      align-items: center;
     }
   }
   &__divIMG {
@@ -106,7 +107,7 @@ body {
     margin: 20px;
     border: #f9f7ac solid 2px;
     border-radius: 10px;
-    height: 350px;
+    height: 310px;
   }
   &__divINFO {
     display: flex;
@@ -116,7 +117,7 @@ body {
     border-radius: 10px;
     background-color: #f9f6ac92;
     margin: 20px;
-    margin-top: 10px;
+    margin-top: 20px;
     width: 300px;
     padding: 10px;
     border: #44d186 dashed 2px;
