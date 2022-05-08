@@ -2,6 +2,9 @@ import FilterMovie from './FilterMovie';
 import FilterReset from './FilterReset';
 import FilterYear from './FilterYear';
 
+import styles from '../../styles/form.scss'
+
+
 /**
  * Es una función que devuelve una sección con un formulario que tiene una filtro de película, filtro de año y un restablecimiento de filtro.
  */

@@ -9,16 +9,18 @@ import SceneDetail from './scene/SceneDetail';
 
 import LS from '../services/localStorage';
 
-import styles from '../styles/page.scss'
-
+import styles from '../styles/page.scss';
 
 function App() {
+  // 3 variables de estado
   const [dataScenes, setDataScenes] = useState([]);
 
   const [filterMovie, setFilterMovie] = useState(LS.get('filterMovie', []));
 
   const [filterYear, setFilterYear] = useState(0);
 
+  // 2 useEffect
+  /* Un gancho que se llama cuando se monta el componente. */
   useEffect(() => {
     if (dataScenes.length === 0) {
       getWowApi().then((dataFromApi) => {
@@ -27,12 +29,14 @@ function App() {
     }
   }, []);
 
-  //Debemos guardar los datos en el local storage en un useEffect para que después de cambiar el local storage esté actualizado.
-  //Lee del local storage los datos y guárdalos en el useState para que estén disponibles al arrancar la página.
+  /* Guardando el valor de filterMovie en el almacenamiento local. */
   useEffect(() => {
     LS.set('filterMovie', filterMovie);
   }, [filterMovie]);
 
+  // 6 funciones
+
+  // funciones manejadoras de las variables de estado
   const handleFilterMovie = (value) => {
     setFilterMovie(value);
   };
@@ -41,20 +45,13 @@ function App() {
     setFilterYear(value);
   };
 
-  // reset button function
-  /**
-   * Establece las variables de estado filterMovie y filterYear en cadenas vacías y 0 respectivamente
-   */
-
   const handleFilterReset = () => {
     setFilterMovie('');
     setFilterYear(0);
   };
 
-  console.log(filterYear);
-
+  // función para filtrar los datos de la API
   const sceneFilters = dataScenes
-    // filter para input película
     .filter((scene) => {
       if (filterMovie === '') {
         return true;
@@ -64,7 +61,6 @@ function App() {
           .includes(filterMovie.toString().toLowerCase().trim());
       }
     })
-    //filter para select año (solución ev intermedia)
     .filter((scene) => {
       if (filterYear === 0) {
         return true;
@@ -76,8 +72,7 @@ function App() {
       }
     });
 
-  // orden alfabético:
-
+  // función para comparar el orden alfabético:
   const compareByName = (sceneA, sceneB) => {
     if (sceneA.movie > sceneB.movie) {
       return 1;
@@ -102,17 +97,15 @@ function App() {
   // código para crear la ruta al timestamp de cada escena
   const { pathname } = useLocation();
   const dataPath = matchPath('/scene/:scenetimestamp', pathname);
-
   const scenetimestamp =
     dataPath !== null ? dataPath.params.scenetimestamp : null;
-
   const sceneFound = dataScenes.find(
     (item) => item.timestamp === scenetimestamp
   );
 
   return (
     <>
-      <h1 className='page__header'>Wowen  Wilson's  WOW  scenes</h1>
+      <h1 className='page__header'>Wowen Wilson's WOW scenes</h1>
       <div>
         <Routes>
           <Route

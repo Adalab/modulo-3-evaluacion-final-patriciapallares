@@ -1,5 +1,5 @@
 import Scene from './Scene';
-// import styles from '../../styles/scene.scss'
+import styles from '../../styles/scene.scss'
 
 /**
  * Devuelve una lista de escenas si hay escenas para mostrar, de lo contrario, devuelve un mensaje de loading. Si no hay escenas filtradas para mostrar, devuelve un mensaje de advertencia

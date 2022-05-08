@@ -1,8 +1,8 @@
 import { Link } from 'react-router-dom';
 import LS from '../../services/localStorage';
 import { useEffect } from 'react';
-// import styles from '../../styles/detail.scss';
-// import styles2 from '../../styles/main.scss';
+import styles from '../../styles/detail.scss';
+import styles2 from '../../styles/main.scss';
 
 /**
  * Es una función que devuelve una sección con un artículo.
