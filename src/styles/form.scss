@@ -12,10 +12,15 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: 1fr;
-    grid-column-gap: 20px;
+    grid-column-gap: 5px;
     grid-row-gap: 0px;
     display: flex;
     justify-content: space-between;
+
+    @media all and (min-width: 768px) {
+      grid-column-gap: 20px;
+
+    }
   }
 
   &__div {
@@ -51,4 +56,9 @@
 
 .form__input:hover{
   cursor: pointer;
+}
+
+input, select {
+  background-color:#f9f7ac;
+  border: #44d186 1px solid;
 }

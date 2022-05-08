@@ -26,7 +26,7 @@ App de escenas en las que Owen Wilson dice Wow
  - [x] Web bonita
  - [ ] Iconos
  - [x] Grid 
- - [ ] Responsive
+ - [x] Responsive
  - [x] Botón de volver atrás
 
 8. Bonus: URL compatible y LS
