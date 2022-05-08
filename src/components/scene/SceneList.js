@@ -1,6 +1,9 @@
 import Scene from './Scene';
-import styles from '../../styles/scene.scss'
+// import styles from '../../styles/scene.scss'
 
+/**
+ * Devuelve una lista de escenas si hay escenas para mostrar, de lo contrario, devuelve un mensaje de loading. Si no hay escenas filtradas para mostrar, devuelve un mensaje de advertencia
+ */
 
 function SceneList(props) {
   if (props.dataScenes.length === 0) {
@@ -10,7 +13,8 @@ function SceneList(props) {
   if (props.sortedScenes.length === 0) {
     return (
       <p className='scene__warning'>
-        No hay ningún nombre de película que coincida con la palabra: <span className='scene__warning__italics'>{props.filterMovie}</span>
+        No hay ningún nombre de película que coincida con la palabra:{' '}
+        <span className='scene__warning__italics'>{props.filterMovie}</span>
       </p>
     );
   }
