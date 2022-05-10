@@ -19,6 +19,8 @@ function App() {
 
   const [filterYear, setFilterYear] = useState(0);
 
+  const [filterDirector, setFilterDirector] = useState('all');
+
   // 2 useEffect
   /* Un gancho que se llama cuando se monta el componente. */
   useEffect(() => {
@@ -48,6 +50,11 @@ function App() {
   const handleFilterReset = () => {
     setFilterMovie('');
     setFilterYear(0);
+    setFilterDirector('all');
+  };
+
+  const handleFilterDirector = (value) => {
+    setFilterDirector(value);
   };
 
   // función para filtrar los datos de la API
@@ -69,6 +76,15 @@ function App() {
         // return filterYear.includes(scene.year);
       } else {
         return false;
+      }
+    })
+    .filter((scene) => {
+      if (filterDirector === 'all') {
+        return true;
+      } else {
+        return scene.director
+          .toLowerCase()
+          .includes(filterDirector.toString().toLowerCase());
       }
     });
 
@@ -103,6 +119,20 @@ function App() {
     (item) => item.timestamp === scenetimestamp
   );
 
+  // función para comprobar si un director está o no entre el array de sorted ¿?
+
+  const directorSelectedIndex = sortedScenes.findIndex(
+    (item) => item.director === filterDirector
+  );
+
+  console.log('director' + directorSelectedIndex);
+
+  // función para comprobar si un movie está o no entre el array de sorted ¿?
+
+  const movieSelectedIndex = dataScenes.findIndex((item) =>
+    item.movie.toLowerCase().includes(filterMovie.toLowerCase())
+  );
+
   return (
     <>
       <h1 className='page__header'>Wowen Wilson's WOW scenes</h1>
@@ -119,11 +149,16 @@ function App() {
                   filterYear={filterYear}
                   years={getYears()}
                   handleFilterReset={handleFilterReset}
+                  handleFilterDirector={handleFilterDirector}
+                  filterDirector={filterDirector}
                 />
                 <SceneList
                   filterMovie={filterMovie}
                   sortedScenes={sortedScenes}
                   dataScenes={dataScenes}
+                  movieSelectedIndex={movieSelectedIndex}
+                  directorSelectedIndex={directorSelectedIndex}
+                  filterDirector={filterDirector}
                 />
               </>
             }

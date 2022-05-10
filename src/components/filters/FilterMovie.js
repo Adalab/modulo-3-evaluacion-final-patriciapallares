@@ -17,7 +17,7 @@ function FilterMovie(props) {
         type='text'
         value={`${props.filterMovie}`}
         onChange={handleInput}
-        placeholder='Shanghai Knights'
+        placeholder='Por ejemplo: Cars'
       />
     </div>
   );

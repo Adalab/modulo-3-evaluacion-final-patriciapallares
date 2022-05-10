@@ -1,9 +1,9 @@
 import FilterMovie from './FilterMovie';
 import FilterReset from './FilterReset';
 import FilterYear from './FilterYear';
+import FilterDirector from './FilterDirector';
 
-import styles from '../../styles/form.scss'
-
+import styles from '../../styles/form.scss';
 
 /**
  * Es una función que devuelve una sección con un formulario que tiene una filtro de película, filtro de año y un restablecimiento de filtro.
@@ -25,6 +25,11 @@ function Filters(props) {
           years={props.years}
           handleFilterYear={props.handleFilterYear}
           filterYear={props.filterYear}
+        />
+
+        <FilterDirector
+          handleFilterDirector={props.handleFilterDirector}
+          filterDirector={props.filterDirector}
         />
 
         <FilterReset handleFilterReset={props.handleFilterReset} />
