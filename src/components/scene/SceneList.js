@@ -19,7 +19,7 @@ function SceneList(props) {
     return (
       <p className='scene__warning'>
         No hay ningún nombre de película que coincida con la palabra:
-        <span className='scene__warning__italics'>"{props.filterMovie}"</span>
+        <span className='scene__warning__italics'> "{props.filterMovie}"</span>
       </p>
     );
   }
