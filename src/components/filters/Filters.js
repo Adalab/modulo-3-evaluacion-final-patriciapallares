@@ -16,17 +16,19 @@ function Filters(props) {
   return (
     <section className='form__section'>
       <form className='form__form' action='' onSubmit={handleForm}>
-        <FilterMovie
-          handleFilterMovie={props.handleFilterMovie}
-          filterMovie={props.filterMovie}
-        />
-
-        <FilterYear
-          years={props.years}
-          handleFilterYear={props.handleFilterYear}
-          filterYear={props.filterYear}
-        />
-
+       
+        <div className='form__form__part'>
+          <FilterMovie
+            handleFilterMovie={props.handleFilterMovie}
+            filterMovie={props.filterMovie}
+          />
+          <FilterYear
+            years={props.years}
+            handleFilterYear={props.handleFilterYear}
+            filterYear={props.filterYear}
+          />
+        </div>
+        
         <FilterDirector
           handleFilterDirector={props.handleFilterDirector}
           filterDirector={props.filterDirector}
