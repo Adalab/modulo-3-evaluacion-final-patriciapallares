@@ -125,8 +125,6 @@ function App() {
     (item) => item.director === filterDirector
   );
 
-  console.log('director' + directorSelectedIndex);
-
   // función para comprobar si un movie está o no entre el array de sorted ¿?
 
   const movieSelectedIndex = dataScenes.findIndex((item) =>

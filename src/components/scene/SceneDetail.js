@@ -12,8 +12,6 @@ function SceneDetail(props) {
   useEffect(() => {
     LS.set(props.scene.timestamp, props.scene);
     LS.get(props.scene.timestamp, []);
-
-    console.log('he ocurrido');
   });
 
   return (
