@@ -128,7 +128,7 @@ function App() {
   // función para comprobar si un movie está o no entre el array de sorted ¿?
 
   const movieSelectedIndex = dataScenes.findIndex((item) =>
-    item.movie.toLowerCase().includes(filterMovie.toLowerCase())
+    item.movie.toLowerCase().includes(filterMovie)
   );
 
   return (

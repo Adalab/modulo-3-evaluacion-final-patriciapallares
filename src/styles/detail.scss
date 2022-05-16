@@ -116,11 +116,13 @@ body {
     align-items: center;
     border-radius: 10px;
     background-color: #f9f6ac92;
-    margin: 20px;
-    margin-top: 20px;
+    margin: 0 20px 20px 20px;
     width: 300px;
     padding: 10px;
     border: #44d186 dashed 2px;
+    @media all and (min-width: 768px) {
+      margin: 20px;
+    }
   }
 }
 
